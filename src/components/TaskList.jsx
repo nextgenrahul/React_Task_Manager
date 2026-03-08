@@ -3,7 +3,6 @@ import React, {
   useMemo,
   useCallback,
   useRef,
-  useContext,
   useEffect,
 } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -172,23 +171,23 @@ function TaskList() {
             )}
             <button
               onClick={() => dispatch(deleteTask(t.id))}
-              className="hover:text-yellow-300 transition text-2xl"
+              className="hover:text-yellow-300 transition "
             >
-              ❌
+              Delete
             </button>
             {editId === t.id ? (
               <button
                 onClick={handleEditSave}
-                className="text-green-300 hover:text-green-100 text-2xl ml-2"
+                className="text-green-300 hover:text-green-100 ml-2"
               >
-                ✅
+                Done
               </button>
             ) : (
               <button
                 onClick={() => handleEditStart(t.id, t.task)}
-                className="hover:text-yellow-300 text-2xl ml-2"
+                className="hover:text-yellow-300  ml-2"
               >
-                ✏️
+                Edit
               </button>
             )}
           </li>
